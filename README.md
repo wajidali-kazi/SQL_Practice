@@ -23,3 +23,15 @@ FROM Employees e
 LEFT JOIN EmployeeUNI eu
 ON e.id = eu.id;
 ```
+
+# Leed code Question Number 1068. Product Sales Analysis I
+Write a solution to report the product_name, year, and price for each sale_id in the Sales table.
+Return the resulting table in any order.
+# Code
+```mysql []
+# Write your MySQL query statement below
+SELECT product_name, year, price 
+FROM Sales s
+INNER JOIN Product p
+ON s.product_id = p.product_id
+```
