@@ -35,3 +35,17 @@ FROM Sales s
 INNER JOIN Product p
 ON s.product_id = p.product_id
 ```
+
+# Leed code Question Number 1581. Customer Who Visited but Did Not Make Any Transactions
+Write a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
+Return the result table sorted in any order.
+# Code
+```mysql []
+# Write your MySQL query statement below
+SELECT v.customer_id, COUNT(*) as count_no_trans 
+FROM visits v
+LEFT JOIN Transactions t
+on v.visit_id = t.visit_id
+WHERE t.visit_id IS NULL
+GROUP BY customer_id ;
+```
